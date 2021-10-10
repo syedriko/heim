@@ -4,7 +4,7 @@ use std::net::IpAddr;
 
 use crate::Pid;
 
-pub type SessionId = i32;
+pub type SessionId = i64;
 
 /*
 cfg_if::cfg_if! {
@@ -12,7 +12,7 @@ cfg_if::cfg_if! {
     if #[cfg(all(target_arch = "aarch64", not(target_family = "musl")))] {
         /// User session ID.
         pub type SessionId = i64;
-    } else {
+	} else {
         /// User session ID.
         pub type SessionId = i32;
     }
